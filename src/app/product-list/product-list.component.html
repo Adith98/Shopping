@@ -1,0 +1,25 @@
+<div class="h3 text-secondary text-center mt-4">
+    List of Products
+</div>
+<div class="container table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <td>Product Id</td>
+                <td>Product Name</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Add to Cart</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products,let i=index">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td><a class="btn btn-outline-secondary" (click)=AddToCart(i)>Add to Cart</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

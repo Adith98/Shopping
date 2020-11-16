@@ -1,0 +1,27 @@
+<div class="h3 text-secondary text-center mt-4">
+    Your Cart
+</div>
+<div class="container table-responsive">
+    <div class="alert alert-danger" *ngIf="cart.length===0">Your Cart is Empty!</div>
+    <table class="table table-bordered table-striped">
+        <thead class="bg-dark text-white" *ngIf="!(cart.length===0)">
+            <tr>
+                <td>Product Id</td>
+                <td>Product Name</td>
+                <td>Total Price</td>
+                <td>Quantity</td>
+                <td>Add to Cart</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of cart,let i=index">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price * product.quantity}}</td>
+                <td>{{product.quantity}}</td>
+                <td><a class="btn btn-outline-danger" (click)=removeFromCart(i)>Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
